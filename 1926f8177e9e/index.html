@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>IO - 小徐&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="小徐&#039;s Blog"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="小徐&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="IO 面试题"><meta property="og:type" content="article"><meta property="og:title" content="IO"><meta property="og:url" content="https://blog.hr947x.com/1926f8177e9e/"><meta property="og:site_name" content="小徐&#039;s Blog"><meta property="og:description" content="IO 面试题"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.hr947x.com/img/og_image.png"><meta property="article:published_time" content="2022-02-17T08:17:46.000Z"><meta property="article:modified_time" content="2022-03-21T11:01:33.000Z"><meta property="article:author" content="小徐"><meta property="article:tag" content="面试"><meta property="article:tag" content="IO"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.hr947x.com/1926f8177e9e/"},"headline":"IO","image":["https://blog.hr947x.com/img/og_image.png"],"datePublished":"2022-02-17T08:17:46.000Z","dateModified":"2022-03-21T11:01:33.000Z","author":{"@type":"Person","name":"小徐"},"publisher":{"@type":"Organization","name":"小徐's Blog","logo":{"@type":"ImageObject","url":{"text":"小徐's Blog"}}},"description":"IO 面试题"}</script><link rel="canonical" href="https://blog.hr947x.com/1926f8177e9e/"><link rel="icon" href="/img/avatar.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">小徐&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">博客</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="踽踽独行" href="https://www.hr947x.com">踽踽独行</a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-17T08:17:46.000Z" title="2/17/2022, 8:17:46 AM">2022-02-17</time>发表</span><span class="level-item"><time dateTime="2022-03-21T11:01:33.000Z" title="3/21/2022, 11:01:33 AM">2022-03-21</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><span> / </span><a class="link-muted" href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span><span class="level-item">7 分钟读完 (大约1097个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">IO</h1><div class="content"><p>IO 面试题</p>
+<span id="more"></span>
+
+<h1 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903953289707534">JAVA IO与NIO - 掘金 (juejin.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903957576286215">NIO - 掘金 (juejin.cn)</a></p>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="BIO-NIO-AIO"><a href="#BIO-NIO-AIO" class="headerlink" title="BIO NIO AIO"></a>BIO NIO AIO</h2><p>BIO：Block IO 同步阻塞式 IO，就是我们平常使用的传统 IO，它的特点是模式简单使用方便，并发处理能力低。</p>
+<p>NIO：New IO 同步非阻塞 IO，是传统 IO 的升级，客户端和服务器端通过 Channel（通道）通讯，实现了多路复用。</p>
+<p>AIO：Asynchronous IO 是 NIO 的升级，也叫 NIO2，实现了异步非堵塞 IO ，异步 IO 的操作基于事件和回调机制。</p>
+<h1 id="IO-相关"><a href="#IO-相关" class="headerlink" title="IO 相关"></a>IO 相关</h1><p><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/io/java-io-overview.html">♥Java IO知识体系详解♥ | Java 全栈知识体系 (pdai.tech)</a></p>
+<h2 id="Unix-IO-模型简介"><a href="#Unix-IO-模型简介" class="headerlink" title="Unix IO 模型简介"></a>Unix IO 模型简介</h2><ul>
+<li>  阻塞式 I/O：应用进程被阻塞，直到数据复制到应用进程缓冲区中才返回，阻塞的过程中，其它程序还可以执行。不消耗 CPU 时间，这种模型的执行效率会比较高。</li>
+<li>  非阻塞式 I/O：应用进程执行系统调用之后，内核返回一个错误码。应用进程可以继续执行，但是需要不断的执行系统调用来获知 I/O 是否完成，这种方式称为轮询(polling)。由于 CPU 要处理更多的系统调用，因此这种模型是比较低效的。</li>
+<li>  I/O 复用：它可以让单个进程具有处理多个 I/O 事件的能力。又被称为事件驱动 I/O。I/O 复用不需要进程线程创建和切换的开销，系统开销更小。</li>
+<li>  信号驱动 I/O：相比于非阻塞式 I/O 的轮询方式，信号驱动 I/O 的 CPU 利用率更高。</li>
+<li>  异步 I/O：异步 I/O 与信号驱动 I/O 的区别在于，异步 I/O 的信号是通知应用进程 I/O 完成，而信号驱动 I/O 的信号是通知应用进程可以开始 I/O。</li>
+</ul>
+<h2 id="BIO-blocking-IO"><a href="#BIO-blocking-IO" class="headerlink" title="BIO blocking IO"></a>BIO blocking IO</h2><ul>
+<li>  应用程序向操作系统请求网络 IO 操作，这时应用程序会一直等待；</li>
+<li>  另一方面，操作系统收到请求后，也会等待，直到网络上有数据传到监听端口；</li>
+<li>  操作系统在收集数据后，会把数据发送给应用程序；</li>
+<li>  最后应用程序受到数据，并解除等待状态。</li>
+</ul>
+<h2 id="多路复用-IO-的优缺点"><a href="#多路复用-IO-的优缺点" class="headerlink" title="多路复用 IO 的优缺点"></a>多路复用 IO 的优缺点</h2><ul>
+<li>  不用再使用多线程来进行 IO 处理了(包括操作系统内核 IO 管理模块和应用程序进程而言)。当然实际业务的处理中，应用程序进程还是可以引入线程池技术的</li>
+<li>  同一个端口可以处理多种协议，例如，使用 ServerSocketChannel 测测的服务器端口监听，既可以处理 TCP 协议又可以处理 UDP 协议。</li>
+<li>  操作系统级别的优化：多路复用 IO 技术可以是操作系统级别在一个端口上能够同时接受多个客户端的 IO 事件。同时具有之前我们讲到的阻塞式同步 IO 和非阻塞式同步 IO 的所有特点。Selector 的一部分作用更相当于“轮询代理器”。</li>
+<li>  都是同步 IO: 目前我们介绍的阻塞式 IO、非阻塞式 IO 甚至包括多路复用 IO，这些都是基于操作系统级别对“同步 IO”的实现。我们一直在说“同步 IO”，一直都没有详细说，什么叫做“同步 IO”。实际上一句话就可以说清楚：只有上层(包括上层的某种代理机制)系统询问我是否有某个事件发生了，否则我不会主动告诉上层系统事件发生了。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h2 id="递归读取文件夹"><a href="#递归读取文件夹" class="headerlink" title="递归读取文件夹"></a>递归读取文件夹</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">listFile</span><span class="params">(String path)</span> &#123;</span><br><span class="line">    <span class="comment">// 因为下面的 new File 如果 path 为空，会报异常</span></span><br><span class="line">    <span class="keyword">if</span> (path == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    File[] files = <span class="keyword">new</span> <span class="title class_">File</span>(path).listFiles();</span><br><span class="line">    <span class="keyword">if</span> (files == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(File file : files) &#123;</span><br><span class="line">        <span class="keyword">if</span> (file.isFile()) &#123;</span><br><span class="line">            System.out.println(file.getName());</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Directory:&quot;</span> + file.getName());</span><br><span class="line">            listFile(file.getPath());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Error&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="article-licensing box"><div class="licensing-title"><p>IO</p><p><a href="https://blog.hr947x.com/1926f8177e9e/">https://blog.hr947x.com/1926f8177e9e/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>小徐</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-02-17</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-03-21</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a><a class="link-muted mr-2" rel="tag" href="/tags/IO/">IO</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/d000ecc9e1c3/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">动态代理</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/1f2c05056136/"><span class="level-item">日常问题处理</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#资料"><span class="level-left"><span class="level-item">1</span><span class="level-item">资料</span></span></a></li><li><a class="level is-mobile" href="#基础"><span class="level-left"><span class="level-item">2</span><span class="level-item">基础</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#BIO-NIO-AIO"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">BIO NIO AIO</span></span></a></li></ul></li><li><a class="level is-mobile" href="#IO-相关"><span class="level-left"><span class="level-item">3</span><span class="level-item">IO 相关</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Unix-IO-模型简介"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Unix IO 模型简介</span></span></a></li><li><a class="level is-mobile" href="#BIO-blocking-IO"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">BIO blocking IO</span></span></a></li><li><a class="level is-mobile" href="#多路复用-IO-的优缺点"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">多路复用 IO 的优缺点</span></span></a></li><li><a class="level is-mobile" href="#代码"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">代码</span></span></a></li><li><a class="level is-mobile" href="#递归读取文件夹"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">递归读取文件夹</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-20T05:35:04.000Z">2022-04-20</time></p><p class="title"><a href="/4e2ca58138aa/">Linux sed 教程</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-07T13:14:08.000Z">2022-04-07</time></p><p class="title"><a href="/e7a6f47a5edd/">IDEA 快捷键</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T08:38:54.000Z">2022-03-20</time></p><p class="title"><a href="/de4a65c796a3/">Java 基础</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T10:01:25.000Z">2022-03-19</time></p><p class="title"><a href="/906fcab3c166/">Java 新特性</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T05:27:25.000Z">2022-03-19</time></p><p class="title"><a href="/9d30f1f85362/">macOS 环境搭建</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">小徐&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 小徐</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="蜀ICP备20016181号-1" href="https://beian.miit.gov.cn/">蜀ICP备20016181号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Java 新特性 - 小徐&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="小徐&#039;s Blog"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="小徐&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="Java 新特性"><meta property="og:type" content="article"><meta property="og:title" content="Java 新特性"><meta property="og:url" content="https://blog.hr947x.com/906fcab3c166/"><meta property="og:site_name" content="小徐&#039;s Blog"><meta property="og:description" content="Java 新特性"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.hr947x.com/img/og_image.png"><meta property="article:published_time" content="2022-03-19T10:01:25.000Z"><meta property="article:modified_time" content="2022-03-19T10:01:25.000Z"><meta property="article:author" content="小徐"><meta property="article:tag" content="面试"><meta property="article:tag" content="Java"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.hr947x.com/906fcab3c166/"},"headline":"Java 新特性","image":["https://blog.hr947x.com/img/og_image.png"],"datePublished":"2022-03-19T10:01:25.000Z","dateModified":"2022-03-19T10:01:25.000Z","author":{"@type":"Person","name":"小徐"},"publisher":{"@type":"Organization","name":"小徐's Blog","logo":{"@type":"ImageObject","url":{"text":"小徐's Blog"}}},"description":"Java 新特性"}</script><link rel="canonical" href="https://blog.hr947x.com/906fcab3c166/"><link rel="icon" href="/img/avatar.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">小徐&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">博客</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="踽踽独行" href="https://www.hr947x.com">踽踽独行</a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-19T10:01:25.000Z" title="3/19/2022, 10:01:25 AM">2022-03-19</time>发表</span><span class="level-item"><time dateTime="2022-03-19T10:01:25.000Z" title="3/19/2022, 10:01:25 AM">2022-03-19</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a><span> / </span><a class="link-muted" href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span><span class="level-item">13 分钟读完 (大约1916个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Java 新特性</h1><div class="content"><p>Java 新特性</p>
+<span id="more"></span>
+
+<h1 id="Java-8"><a href="#Java-8" class="headerlink" title="Java 8"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8.html"><em><strong>Java 8</strong></em></a></h1><p><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java9-11.html">JDK 8 升 JDK 11 重要特性</a></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-stream.html">函数编程 Lambda 表达式</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-optional.html">Optional 类</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-default.html">default 方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-type-anno.html">类型注解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-anno-repeat.html">重复注解</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-type.html">类型推断优化</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-jre.html">JRE 精简</a></li>
+<li><a href="LocalDate/LocalDateTime">LocalDate/LocalDateTime</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-javafx.html">JavaFx 2.0</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-permgen.html">移除 Permgen</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-stampedlock.html">StampedLock</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8/java8-others.html">其它更新: 字符串，base64</a></li>
+</ul>
+<h1 id="Java-9"><a href="#Java-9" class="headerlink" title="Java 9"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java9.html">Java 9</a></h1><p>正式版</p>
+<ul>
+<li>模块系统：JDK 被重新组织成 94 个模块。可以创建出只包含所依赖的 JDK 模块的自定义运行时镜像。极大的减少 Java 运行时环境的大小。镜像的减少节省很多存储空间和带宽资源；</li>
+<li>在集合上，JDK 9 增加 了 <code>List.of(&quot;Hello&quot;, &quot;World&quot;)</code>、<code>Set.of(1, 2, 3)</code>、<code>Map.of(&quot;Hello&quot;, 1, &quot;World&quot;, 2)</code> 等工厂方法来创建不可变集合；</li>
+<li>Stream 中增加了新的方法 <code>ofNullable</code>、<code>dropWhile</code>、<code>takeWhile</code> 和 <code>iterate</code>; Collectors 中增加了新的方法 <code>filtering</code> 和 <code>flatMapping</code>;</li>
+<li>Optional 类中新增了 <code>ifPresentOrElse</code>、<code>or</code> 和 <code>stream</code> 等方法</li>
+<li>平台日志 API：Java 9 允许为 JDK 和应用配置同样的日志实现。</li>
+<li>统一 JVM 日志：JVM 有了统一的日志记录系统，可以使用新的命令行选项 <code>-Xlog</code> 来控制 JVM 上 所有组件的日志记录；</li>
+<li>允许在接口中使用私有方法；</li>
+</ul>
+<h1 id="Java-10"><a href="#Java-10" class="headerlink" title="Java 10"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java10.html">Java 10</a></h1><p>正式版</p>
+<ul>
+<li>局部变量类型推断：使用保留字 var，局限于具有初始化器的局部变量、增强型 for 循环中的索引变量以及在传统 for 循环中声明的局部变量；</li>
+<li>统一的垃圾回收接口：全新 GC 接口，允许以混合搭配方式重复使用现有代码，并且能够保持代码更加干净、整洁，便于排查收集器问题；</li>
+<li>整合 JDK 代码仓库：root、corba、hotspot、jaxp、jaxws、jdk、langtools、nashorn 被整合至一个 Mercurial 库中；</li>
+<li>并行全垃圾回收器 G1：同时会使用与年轻代回收和混合回收相同的并行工作线程数量，从而减少了 Full GC 的发生，以带来更好的性能提升、更大的吞吐量</li>
+</ul>
+<h1 id="Java-11"><a href="#Java-11" class="headerlink" title="Java 11"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java11.html"><em><strong>Java 11</strong></em></a></h1><p><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java12-17.html">JDK 11 升 JDK 17 重要特性</a></p>
+<p>正式版</p>
+<ul>
+<li>标准 HTTP Client 升级：Http Client 几乎被完全重写，并且现在完全支持异步非阻塞。</li>
+<li>Epsilon 低开销垃圾回收器：目标一个控制内存分配，但是不执行任何实际的垃圾回收器。它提供一个完全消极的 GC 实现，分配有限的内存资源，最大限度的降低内存占用和内存吞吐延迟时间。</li>
+<li>Lambda 表达式中使用局部变量类型推断：允许开发者在 Lambda 表达式中使用 var 进行参数声明。</li>
+<li>支持 TLS 1.3 协议；</li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>ZGC 可伸缩低延迟垃圾收集器（预览版）：GC 停顿时间不超过 10ms，即能处理几百 MB 的小堆，也能处理几个 TB 的大堆等，仅限 Linux x64 平台；</li>
+</ul>
+<h1 id="Java-12"><a href="#Java-12" class="headerlink" title="Java 12"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java12.html">Java 12</a></h1><p>正式版</p>
+<ul>
+<li>G1 归还不使用的内存：改进 G1 垃圾收集器，以便在不活动时将 Java 堆内存归还给操作系统；</li>
+<li>G1 的可中断 mixed GC：将 Mixed GC 集拆分为强制部分和可选部分，使 G1 垃圾收集器更有效地中止垃圾收集过程；</li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>Shenandoah 低暂停时间垃圾收集器（实验）：性能几乎与 ZGC 相同<ul>
+<li>ZGC 是Oracle JDK 的。而 Shenandoah 只存在于 OpenJDK 中</li>
+</ul>
+</li>
+<li>Switch 表达式；</li>
+</ul>
+<h1 id="Java-13"><a href="#Java-13" class="headerlink" title="Java 13"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java13.html">Java 13</a></h1><p>正式版</p>
+<ul>
+<li>Socket API 重构：为 Socket API 带来了新的底层实现方法，并且在 Java 13 中是默认使用新的 Socket 实现，使其易于发现并在排除问题同时增加可维护性；</li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>增强 ZGC：默认开启内存释放功能，支持最大堆大小为 16TB；</li>
+<li>Switch 表达式扩展；</li>
+<li>文本块；</li>
+</ul>
+<h1 id="Java-14"><a href="#Java-14" class="headerlink" title="Java 14"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java14.html">Java 14</a></h1><p>正式版</p>
+<ul>
+<li>Switch 表达式（正式版）；</li>
+<li>删除 CMS 垃圾回收器；</li>
+<li>改进 NullPointerExceptions 提示信息：更易于定位多层级调用 null 位置 <code>shoopingcart.buy.book.id = 99;</code></li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>instanceof 模式匹配；</li>
+<li>ZGC（预览版）支持 MacOS、Windows；</li>
+<li>文本块（第二预览版本）</li>
+<li>Records 类型：当用 <code>record</code> 来声明一个类时，效果有些类似 Lombok 的 @Data 注解，该类将自动拥有下面特征：<ul>
+<li>拥有一个构造方法</li>
+<li>获取成员属性值的方法：name()、age()</li>
+<li>hashCode() 方法和 equals() 方法</li>
+<li>toString() 方法</li>
+<li>类对象和属性被 final 关键字修饰，不能被继承，类的示例属性也都被 final 修饰，不能再被赋值使用。</li>
+<li>还可以在 record 声明的类中定义静态属性、方法和示例方法。</li>
+<li>不能在 record 声明的类中定义示例字段，类也不能声明为抽象类等。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Java-15"><a href="#Java-15" class="headerlink" title="Java 15"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java15.html">Java 15</a></h1><p>正式版</p>
+<ul>
+<li>ZGC 可伸缩低延迟垃圾收集器；</li>
+<li>文本块；</li>
+<li>Shenandoah 低暂停时间垃圾收集器：适用于高吞吐和大内存场景，不适合高实时性场景</li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>隐藏类：隐藏类不能直接被其他类的字节码使用，只能在运行时生成类并通过反射间接使用它们；</li>
+<li>禁用偏向锁定：准备禁用和废除偏向锁，在 JDK 15 中，默认情况下禁用偏向锁，并弃用所有相关的命令行选项；</li>
+<li>Records 类型：JDK14 提出；</li>
+<li>密封的类和接口：防止其他类或接口扩展或实现它们；</li>
+</ul>
+<h1 id="Java-16"><a href="#Java-16" class="headerlink" title="Java 16"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java16.html">Java 16</a></h1><p>正式版</p>
+<ul>
+<li>instanceof 模式匹配；</li>
+<li>Records (正式版)：JDK14、JDK15 预览；</li>
+<li>@Deprecated 增强：会在编译期和运行期产生警告，甚至是异常；</li>
+<li>ZGC 并发线程处理：从安全点转移到一个并发阶段，甚至在大堆上也允许在毫秒内暂停 GC 安全点。消除 ZGC 垃圾收集器中最后一个延迟源可以极大地提高应用程序的性能和效率；</li>
+<li>弹性元空间：可将未使用的 HotSpot 类元数据（即元空间，metaspace）内存更快速地返回到操作系统，从而减少元空间的占用空间；</li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>密封的类和接口（第二预览）；</li>
+</ul>
+<h1 id="Java-17"><a href="#Java-17" class="headerlink" title="Java 17"></a><a target="_blank" rel="noopener" href="https://www.pdai.tech/md/java/java8up/java17.html"><em><strong>Java 17</strong></em></a></h1><p>正式版</p>
+<ul>
+<li>密封的类和接口（正式版）；</li>
+<li>增强的伪随机数生成器：<code>RandomGenerator g = RandomGenerator.of(&quot;L64X128MixRandom&quot;);</code>；</li>
+<li>支持 macOS AArch64：将允许 Java 应用程序在新的基于 Arm 64 的 Apple Silicon 计算机上本地运行；</li>
+<li>删除 RMI 激活；</li>
+</ul>
+<p>预览版</p>
+<ul>
+<li>新增 switch 模式匹配；</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Java 新特性</p><p><a href="https://blog.hr947x.com/906fcab3c166/">https://blog.hr947x.com/906fcab3c166/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>小徐</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-03-19</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-03-19</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a><a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/de4a65c796a3/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java 基础</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/9d30f1f85362/"><span class="level-item">macOS 环境搭建</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#Java-8"><span class="level-left"><span class="level-item">1</span><span class="level-item">Java 8</span></span></a></li><li><a class="level is-mobile" href="#Java-9"><span class="level-left"><span class="level-item">2</span><span class="level-item">Java 9</span></span></a></li><li><a class="level is-mobile" href="#Java-10"><span class="level-left"><span class="level-item">3</span><span class="level-item">Java 10</span></span></a></li><li><a class="level is-mobile" href="#Java-11"><span class="level-left"><span class="level-item">4</span><span class="level-item">Java 11</span></span></a></li><li><a class="level is-mobile" href="#Java-12"><span class="level-left"><span class="level-item">5</span><span class="level-item">Java 12</span></span></a></li><li><a class="level is-mobile" href="#Java-13"><span class="level-left"><span class="level-item">6</span><span class="level-item">Java 13</span></span></a></li><li><a class="level is-mobile" href="#Java-14"><span class="level-left"><span class="level-item">7</span><span class="level-item">Java 14</span></span></a></li><li><a class="level is-mobile" href="#Java-15"><span class="level-left"><span class="level-item">8</span><span class="level-item">Java 15</span></span></a></li><li><a class="level is-mobile" href="#Java-16"><span class="level-left"><span class="level-item">9</span><span class="level-item">Java 16</span></span></a></li><li><a class="level is-mobile" href="#Java-17"><span class="level-left"><span class="level-item">10</span><span class="level-item">Java 17</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-20T05:35:04.000Z">2022-04-20</time></p><p class="title"><a href="/4e2ca58138aa/">Linux sed 教程</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-07T13:14:08.000Z">2022-04-07</time></p><p class="title"><a href="/e7a6f47a5edd/">IDEA 快捷键</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T08:38:54.000Z">2022-03-20</time></p><p class="title"><a href="/de4a65c796a3/">Java 基础</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T10:01:25.000Z">2022-03-19</time></p><p class="title"><a href="/906fcab3c166/">Java 新特性</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T05:27:25.000Z">2022-03-19</time></p><p class="title"><a href="/9d30f1f85362/">macOS 环境搭建</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">小徐&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 小徐</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="蜀ICP备20016181号-1" href="https://beian.miit.gov.cn/">蜀ICP备20016181号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

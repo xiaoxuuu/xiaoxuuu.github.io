@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>MySQL 教程 - 小徐&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="小徐&#039;s Blog"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="小徐&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="MySQL 基础教程"><meta property="og:type" content="article"><meta property="og:title" content="MySQL 教程"><meta property="og:url" content="https://blog.hr947x.com/65411b5b7fd1/"><meta property="og:site_name" content="小徐&#039;s Blog"><meta property="og:description" content="MySQL 基础教程"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.hr947x.com/img/og_image.png"><meta property="article:published_time" content="2021-06-18T08:52:18.000Z"><meta property="article:modified_time" content="2021-06-18T08:52:18.000Z"><meta property="article:author" content="小徐"><meta property="article:tag" content="MySQL"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.hr947x.com/65411b5b7fd1/"},"headline":"MySQL 教程","image":["https://blog.hr947x.com/img/og_image.png"],"datePublished":"2021-06-18T08:52:18.000Z","dateModified":"2021-06-18T08:52:18.000Z","author":{"@type":"Person","name":"小徐"},"publisher":{"@type":"Organization","name":"小徐's Blog","logo":{"@type":"ImageObject","url":{"text":"小徐's Blog"}}},"description":"MySQL 基础教程"}</script><link rel="canonical" href="https://blog.hr947x.com/65411b5b7fd1/"><link rel="icon" href="/img/avatar.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">小徐&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">博客</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="踽踽独行" href="https://www.hr947x.com">踽踽独行</a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-18T08:52:18.000Z" title="6/18/2021, 8:52:18 AM">2021-06-18</time>发表</span><span class="level-item"><time dateTime="2021-06-18T08:52:18.000Z" title="6/18/2021, 8:52:18 AM">2021-06-18</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span><span class="level-item">17 分钟读完 (大约2597个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">MySQL 教程</h1><div class="content"><p>MySQL 基础教程</p>
+<span id="more"></span>
+
+<h1 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 创建 book 数据，并设置编码与排序规则</span><br><span class="line">CREATE DATABASE book CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</span><br></pre></td></tr></table></figure>
+
+<h1 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h1><h2 id="用户与权限"><a href="#用户与权限" class="headerlink" title="用户与权限"></a>用户与权限</h2><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 新增用户</span><br><span class="line">CREATE USER &#x27;users&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;password&#x27;;</span><br><span class="line">CREATE USER &#x27;users&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password&#x27;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改密码加密方式"><a href="#修改密码加密方式" class="headerlink" title="修改密码加密方式"></a>修改密码加密方式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 查询用户信息</span><br><span class="line">select host,user,plugin,authentication_string from mysql.user;</span><br><span class="line"></span><br><span class="line"># 编辑用户密码</span><br><span class="line">ALTER USER &#x27;users&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;password&#x27;;</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;password&#x27;;</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;password&#x27;;</span><br><span class="line"></span><br><span class="line"># 用户授权</span><br><span class="line">grant all privileges on *.* to &#x27;user&#x27;@&#x27;%&#x27;;</span><br><span class="line"></span><br><span class="line"># 刷新使配置生效</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h3 id="授权远程访问"><a href="#授权远程访问" class="headerlink" title="授权远程访问"></a>授权远程访问</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;password&#x27; WITH GRANT OPTION;</span><br><span class="line">GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;192.168.0.77&#x27; IDENTIFIED BY &#x27;password&#x27; WITH GRANT OPTION;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/deverz/p/10985008.html">资料来源</a></p>
+<h2 id="备份与恢复"><a href="#备份与恢复" class="headerlink" title="备份与恢复"></a>备份与恢复</h2><h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>参数：</p>
+<ul>
+<li>–user=root<ul>
+<li>指定用户；</li>
+</ul>
+</li>
+<li>–password=123<ul>
+<li>指定密码，也可不填写密码，敲下回车后手动输入；</li>
+</ul>
+</li>
+<li>–lock-all-tables<ul>
+<li>备份时锁住所有表，直至备份完成；</li>
+</ul>
+</li>
+<li>–lock-tables<ul>
+<li>备份时锁指定表，直至备份完成；</li>
+</ul>
+</li>
+<li>–skip-all-locks<ul>
+<li>不带锁表语句，可能导致数据不一致；</li>
+</ul>
+</li>
+<li>–extended-insert<ul>
+<li>每个表生成一个 insert 语句，而不是一条数据就生成一条 insert 语句，可有效减少生成备份文件大小；</li>
+</ul>
+</li>
+<li>–skip-extended-insert<ul>
+<li>每条数据生成一条 insert 语句；</li>
+</ul>
+</li>
+<li>–complete-insert<ul>
+<li>生成的 insert 包含列名称；</li>
+</ul>
+</li>
+<li>–ignore-table=mysql.user<ul>
+<li>备份时忽略指定数据库或表；</li>
+</ul>
+</li>
+<li>–skip-add-drop-table<ul>
+<li>不带 DROP TABLE 语句，即不在恢复时删除原表；</li>
+</ul>
+</li>
+<li>–skip-comments<ul>
+<li>不带注释；</li>
+</ul>
+</li>
+<li>–skip-disable-keys<ul>
+<li>不带使表索引失效的语句，可能导致字符集错误；</li>
+</ul>
+</li>
+<li>–skip-set-charset<ul>
+<li>不指定字符集；</li>
+</ul>
+</li>
+<li>–no-create-info<ul>
+<li>不带有 CREATE DATABASE 与 CREATE TABLE 语句；</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump --host=localhost --user=users --password=password --all-databases &gt; /back.sql</span><br><span class="line">mysqldump --host=localhost --user=uesrs --password=password --databases users &gt; /backUsers.sql</span><br></pre></td></tr></table></figure>
+
+<h3 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -h localhost -u root -p &lt; /back.sql</span><br><span class="line">sourced:\back.sql</span><br></pre></td></tr></table></figure>
+
+<h4 id="二进制恢复："><a href="#二进制恢复：" class="headerlink" title="二进制恢复："></a>二进制恢复：</h4><p>查看是否开启二进制日志：<code>SHOW BINARY LOGS;</code>。</p>
+<p>开启二进制日志：</p>
+<p>修改配置文件 my.cnf 或 my.ini，在 [mysqld] 配置项下加入下面两行并重启：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 开启日志</span><br><span class="line">log-bin</span><br><span class="line"># 忽略 mysql 数据库的变动</span><br><span class="line">binlog-ignore-db=mysql</span><br><span class="line"># 设值 serverId</span><br><span class="line">server-id=1</span><br></pre></td></tr></table></figure>
+
+<p>查看二进制日志：<code>SHOW BINARY STATUS;</code></p>
+<p>导出二进制文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查询二进制文件位置</span><br><span class="line">SHOW VARIABLES WHERE Variable_Name LIKE &#x27;datadir&#x27;;</span><br><span class="line"># 转换为可读文件</span><br><span class="line">mysqlbinlog --database=book /var/lib/mysql/34a7f414bf5b-bin.000001 &gt; recovery.txt</span><br><span class="line"># 恢复指定的位置节点</span><br><span class="line">mysqlbinlog --database=book --stop-position=&quot;7932&quot; /var/lib/mysql/34a7f414bf5b-bin.000001 | mysql --user=xu --password</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jian0110/p/9404773.html">参考资料</a></p>
+<h2 id="支持-GROUP-BY"><a href="#支持-GROUP-BY" class="headerlink" title="支持 GROUP BY"></a>支持 GROUP BY</h2><p>本次启动有效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT @@global.sql_mode;</span><br><span class="line"></span><br><span class="line">set GLOBAL sql_mode = &#x27;STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>永久有效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</span><br></pre></td></tr></table></figure>
+
+<h2 id="时区设置"><a href="#时区设置" class="headerlink" title="时区设置"></a>时区设置</h2><p>docker 启动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-itd \</span><br><span class="line">--restart=always \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-e TZ=Asia/Shanghai \</span><br><span class="line">--name mariadb mariadb:10</span><br></pre></td></tr></table></figure>
+
+<p>本次启动有效：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select now();</span><br><span class="line">SHOW VARIABLES LIKE &quot;%time_zone%&quot;;</span><br><span class="line"></span><br><span class="line">set global time_zone = &#x27;+8:00&#x27;;</span><br><span class="line">SET time_zone = &#x27;+8:00&#x27;;</span><br><span class="line"></span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/190599.htm">时区设置</a></p>
+<h2 id="修改本次连接编码"><a href="#修改本次连接编码" class="headerlink" title="修改本次连接编码"></a>修改本次连接编码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 查询编码情况</span><br><span class="line">show variables like &#x27;character_set_%&#x27;;</span><br><span class="line"></span><br><span class="line"># 设置编码</span><br><span class="line">set character_set_client=utf8;</span><br><span class="line">set character_set_results=utf8;</span><br><span class="line">set character_set_connection=utf8;</span><br><span class="line">set character_set_connection=utf8;</span><br><span class="line"># 设置编码，与上四条结果相同</span><br><span class="line">set names utf8;</span><br></pre></td></tr></table></figure>
+
+<h2 id="binlog"><a href="#binlog" class="headerlink" title="binlog"></a>binlog</h2><h3 id="开启-biglog"><a href="#开启-biglog" class="headerlink" title="开启 biglog"></a>开启 biglog</h3><p>修改 my.cnf 后重启 MySQL</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">log-bin=mysql-bin # 开启 binlog</span><br><span class="line">binlog-format=ROW # 选择 ROW 模式</span><br><span class="line">expire_logs_days = 5 # binlog 有效期 5 天</span><br><span class="line"># binlog-rows-query-log-events = true # 在 binlog 日志中存放 SQL 语句，canal 不应开启此选项</span><br><span class="line">binlog_row_image = FULL # binlog日志记录所有前镜像和后镜像</span><br><span class="line">server_id=1 # 配置 MySQL replaction 需要定义，不要和 canal 的 slaveId 重复</span><br></pre></td></tr></table></figure>
+
+<p>执行 SQL <code>SHOW VARIABLES LIKE &#39;log_bin&#39;;</code> 查看是否开启成功</p>
+<h3 id="清理-binlog-日志"><a href="#清理-binlog-日志" class="headerlink" title="清理 binlog 日志"></a>清理 binlog 日志</h3><p><strong>手动删除：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 查看日志情况：</span><br><span class="line">SHOW MASTER STATUS;</span><br><span class="line">SHOW BINARY LOGS;</span><br><span class="line"></span><br><span class="line"># 删除某个日志文件之前的所有日志文件</span><br><span class="line">PURGE BINARY LOGS TO &#x27;mysql-bin.000035&#x27;;</span><br><span class="line"># 删除指定日期以前的日志索引中 binlog 日志文件</span><br><span class="line">PURGE MASTER LOGS BEFORE &#x27;2022-03-02 00:00:00&#x27;;</span><br><span class="line"># 删除指定日志文件的日志索引中 binlog 日志文件</span><br><span class="line">PURGE MASTER LOGS TO &#x27;mysql-bin.000022&#x27;;</span><br><span class="line"># 清理 3 天前 binlog 日志</span><br><span class="line">PURGE MASTER LOGS BEFORE DATE_SUB(NOW( ), INTERVAL 3 DAY);</span><br><span class="line"># 重置所有的日志</span><br><span class="line">RESET MASTER;</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置自动过期：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查看自动过期时间：</span><br><span class="line">SHOW VARIABLES LIKE &#x27;expire_logs_days&#x27;;</span><br><span class="line"></span><br><span class="line"># 设置 binlog 多少天过期</span><br><span class="line">SET GLOBAL expire_logs_days = 30;</span><br></pre></td></tr></table></figure>
+
+<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><h2 id="删除重复记录仅保存一条"><a href="#删除重复记录仅保存一条" class="headerlink" title="删除重复记录仅保存一条"></a>删除重复记录仅保存一条</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40942323/article/details/99692778">mysql中对数据的去重_L X D.的博客-CSDN博客_mysql数据去重</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 选出重复 id 数据</span><br><span class="line">SELECT MIN( id ) AS id FROM t_school_basic_info GROUP BY school_code;</span><br><span class="line"></span><br><span class="line"># 删除</span><br><span class="line">DELETE FROM t_school_basic_info WHERE id NOT IN (SELECT dt.id FROM (SELECT MIN( id ) AS id FROM t_school_basic_info GROUP BY school_code) dt);</span><br></pre></td></tr></table></figure>
+
+<h1 id="常见问题处理"><a href="#常见问题处理" class="headerlink" title="常见问题处理"></a>常见问题处理</h1><h2 id="MySQL-错误：Row-size-too-large-gt-8126"><a href="#MySQL-错误：Row-size-too-large-gt-8126" class="headerlink" title="MySQL 错误：Row size too large (&gt; 8126)."></a>MySQL 错误：Row size too large (&gt; 8126).</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_33859844/article/details/91893124">mysql5.7 Err 1118 - Row size too large (&gt; 8126)._weixin_33859844的博客-CSDN博客</a></p>
+<h1 id="rpm-安装-MySQL"><a href="#rpm-安装-MySQL" class="headerlink" title="rpm 安装 MySQL"></a>rpm 安装 MySQL</h1><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/pao___pao/article/details/80118904">/var/log/mysqld.log 中找不到临时密码 - pao___pao的博客 - CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="http://support.moonpoint.com/software/database/mysql/not-running-centos7.php">MySQL service not running on CentOS 7 system</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wudinaniya/article/details/81094578">centos7下安装mysql5.7（rpm） - wudinaniya的博客 - CSDN博客</a></p>
+<h3 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h3><ul>
+<li>  可连接外网的 Linux 服务器</li>
+</ul>
+<h3 id="2、卸载-MySql"><a href="#2、卸载-MySql" class="headerlink" title="2、卸载 MySql"></a>2、卸载 MySql</h3><h5 id="检查-mysql-安装："><a href="#检查-mysql-安装：" class="headerlink" title="检查 mysql 安装："></a>检查 mysql 安装：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<h5 id="卸载-mysql："><a href="#卸载-mysql：" class="headerlink" title="卸载 mysql："></a>卸载 mysql：</h5><ul>
+<li><p>  普通卸载：<code>rpm -e mysql</code></p>
+</li>
+<li><p>强力卸载（建议）：</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps mysql</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>  卸载 MySQL数据库时，会将其它的依赖文件也删除。</li>
+</ul>
+</li>
+</ul>
+<h5 id="检查-mariadb-安装"><a href="#检查-mariadb-安装" class="headerlink" title="检查 mariadb 安装"></a>检查 mariadb 安装</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mariadb</span><br></pre></td></tr></table></figure>
+
+<h5 id="卸载-mariadb"><a href="#卸载-mariadb" class="headerlink" title="卸载 mariadb"></a>卸载 mariadb</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps 检查出的名称</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps mariadb-libs-5.5.35-3.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、使用-wget-下载-MySQL"><a href="#3、使用-wget-下载-MySQL" class="headerlink" title="3、使用 wget 下载 MySQL"></a>3、使用 wget 下载 MySQL</h3><h5 id="安装-wget"><a href="#安装-wget" class="headerlink" title="安装 wget"></a>安装 wget</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  y：安装过程中所有选择均选 yes</p>
+</blockquote>
+<h3 id="4、新建目录"><a href="#4、新建目录" class="headerlink" title="4、新建目录"></a>4、新建目录</h3><p>使用 <code>mkdir -p /usr/local/app/mysql</code> 命令新建 Jdk 安装文件夹。（可忽略）</p>
+<p>进入目录 <code>cd /usr/local/app/mysql</code></p>
+<h3 id="5、下载-MySQL"><a href="#5、下载-MySQL" class="headerlink" title="5、下载 MySQL"></a>5、下载 MySQL</h3><p>这里安装的是 MySQL 5.7.25（适用于 CentOS 7）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.25-1.el7.x86_64.rpm-bundle.tar</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  若上面链接失效，这里也提供<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">MySql 5.7 官方下载页面</a>地址。</p>
+</blockquote>
+<p><strong>Select Operating System：</strong></p>
+<blockquote>
+<p>  Cent OS 选项选择 <code>Red Hat Enterprise Linux / Oracle Linux</code></p>
+</blockquote>
+<p><strong>Select OS Version：</strong></p>
+<blockquote>
+<p>  CentOS 6 选择 <code>Red Hat Enterprise Linux 6 / Oracle Linux 6 (x86, 64-bit)</code></p>
+<p>  CentOS 7 选择 <code>Red Hat Enterprise Linux 7 / Oracle Linux 7 (x86, 64-bit)</code></p>
+</blockquote>
+<p><strong>Download Packages：</strong></p>
+<blockquote>
+<p>  选择 <code>RPM Bundle</code> 。</p>
+</blockquote>
+<p>点击 <code>Download</code>，进入下载页面，滑至底部，右键选择 <code>No thanks, just start my download.</code>复制链接地址。 使用 <code>wget</code> 命令下载：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget 链接地址</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、解压"><a href="#6、解压" class="headerlink" title="6、解压"></a>6、解压</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-5.7.25-1.el7.x86_64.rpm-bundle.tar</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、安装"><a href="#7、安装" class="headerlink" title="7、安装"></a>7、安装</h3><p>安装必备依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install libaio*</span><br><span class="line">yum -y install net-tools</span><br><span class="line">yum -y install perl</span><br></pre></td></tr></table></figure>
+
+<p>请务必<strong>依次</strong>安装以下 rpm 包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql-community-common-5.7.25-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-5.7.25-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-5.7.25-1.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<h3 id="8、完成安装"><a href="#8、完成安装" class="headerlink" title="8、完成安装"></a>8、完成安装</h3><h5 id="A、获取临时密码"><a href="#A、获取临时密码" class="headerlink" title="A、获取临时密码"></a>A、获取临时密码</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line">2019-04-09T13:12:38.587533Z 1 [Note] A temporary password is generated for root@localhost: kS&gt;gQ+xaS4B3</span><br></pre></td></tr></table></figure>
+
+<p><code>kS&gt;gQ+xaS4B3</code>即为临时密码。（每人均不同）</p>
+<blockquote>
+<p>  常见问题：无法获取密码</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mysql]# grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line">[root@localhost mysql]# </span><br><span class="line">[root@localhost mysql]# grep &#x27;temporary password&#x27; /var/log/mysqld.log</span><br><span class="line">[root@localhost mysql]#</span><br></pre></td></tr></table></figure>
+
+<p>  删除原始数据： <code>rm -rf /var/lib/mysql</code></p>
+<p>  重启 mysqld 服务 <code>systemctl restart mysqld</code></p>
+<p>  获取临时密码 <code>grep &#39;temporary password&#39; /var/log/mysqld.log</code></p>
+</blockquote>
+<h5 id="B、运行向导"><a href="#B、运行向导" class="headerlink" title="B、运行向导"></a>B、运行向导</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 修改初始密码：输入刚刚获取的临时密码</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mysql]# mysql_secure_installation</span><br><span class="line"></span><br><span class="line">Securing the MySQL server deployment.</span><br><span class="line"></span><br><span class="line">Enter password for user root: </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 设置新密码（输入两次）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">The existing password for the user account root has expired. Please set a new password.</span><br><span class="line"></span><br><span class="line">New password: </span><br><span class="line"></span><br><span class="line">Re-enter new password:  </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 设置验证密码插件：N</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">VALIDATE PASSWORD PLUGIN can be used to test passwords</span><br><span class="line">and improve security. It checks the strength of password</span><br><span class="line">and allows the users to set only those passwords which are</span><br><span class="line">secure enough. Would you like to setup VALIDATE PASSWORD plugin?</span><br><span class="line"></span><br><span class="line">Press y|Y for Yes, any other key for No: </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 提示设置 root user 密码：Y</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Using existing password for root.</span><br><span class="line">Change the password for root ? ((Press y|Y for Yes, any other key for No) : </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 是否删除系统创建的匿名用户：Y</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">By default, a MySQL installation has an anonymous user,</span><br><span class="line">allowing anyone to log into MySQL without having to have</span><br><span class="line">a user account created for them. This is intended only for</span><br><span class="line">testing, and to make the installation go a bit smoother.</span><br><span class="line">You should remove them before moving into a production</span><br><span class="line">environment.</span><br><span class="line"></span><br><span class="line">Remove anonymous users? (Press y|Y for Yes, any other key for No) : </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 是否禁止 root 用户远程登录：Y</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Normally, root should only be allowed to connect from</span><br><span class="line">&#x27;localhost&#x27;. This ensures that someone cannot guess at</span><br><span class="line">the root password from the network.</span><br><span class="line"></span><br><span class="line">Disallow root login remotely? (Press y|Y for Yes, any other key for No) : </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 是否删除 test 数据库：Y</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">By default, MySQL comes with a database named &#x27;test&#x27; that</span><br><span class="line">anyone can access. This is also intended only for testing,</span><br><span class="line">and should be removed before moving into a production</span><br><span class="line">environment.</span><br><span class="line"></span><br><span class="line">Remove test database and access to it? (Press y|Y for Yes, any other key for No) : </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 重载权限表：Y</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Reloading the privilege tables will ensure that all changes</span><br><span class="line">made so far will take effect immediately.</span><br><span class="line"></span><br><span class="line">Reload privilege tables now? (Press y|Y for Yes, any other key for No) : </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li> 完整安装流程请直接划至底部</li>
+</ol>
+<h3 id="9、启动-mysql-服务"><a href="#9、启动-mysql-服务" class="headerlink" title="9、启动 mysql 服务"></a>9、启动 mysql 服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure>
+
+<h3 id="10、登录-mysql"><a href="#10、登录-mysql" class="headerlink" title="10、登录 mysql"></a>10、登录 mysql</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p你的密码</span><br></pre></td></tr></table></figure>
+
+<p>如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -proot</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整安装-mysql-流程"><a href="#完整安装-mysql-流程" class="headerlink" title="完整安装 mysql 流程"></a>完整安装 mysql 流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mysql]# mysql_secure_installation</span><br><span class="line"></span><br><span class="line">Securing the MySQL server deployment.</span><br><span class="line"></span><br><span class="line">Enter password for user root: </span><br><span class="line"></span><br><span class="line">The existing password for the user account root has expired. Please set a new password.</span><br><span class="line"></span><br><span class="line">New password: </span><br><span class="line"></span><br><span class="line">Re-enter new password: </span><br><span class="line"></span><br><span class="line">VALIDATE PASSWORD PLUGIN can be used to test passwords</span><br><span class="line">and improve security. It checks the strength of password</span><br><span class="line">and allows the users to set only those passwords which are</span><br><span class="line">secure enough. Would you like to setup VALIDATE PASSWORD plugin?</span><br><span class="line"></span><br><span class="line">Press y|Y for Yes, any other key for No: n</span><br><span class="line">Using existing password for root.</span><br><span class="line">Change the password for root ? ((Press y|Y for Yes, any other key for No) : y</span><br><span class="line"></span><br><span class="line">New password: </span><br><span class="line"></span><br><span class="line">Re-enter new password: </span><br><span class="line">By default, a MySQL installation has an anonymous user,</span><br><span class="line">allowing anyone to log into MySQL without having to have</span><br><span class="line">a user account created for them. This is intended only for</span><br><span class="line">testing, and to make the installation go a bit smoother.</span><br><span class="line">You should remove them before moving into a production</span><br><span class="line">environment.</span><br><span class="line"></span><br><span class="line">Remove anonymous users? (Press y|Y for Yes, any other key for No) : y</span><br><span class="line">Success.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Normally, root should only be allowed to connect from</span><br><span class="line">&#x27;localhost&#x27;. This ensures that someone cannot guess at</span><br><span class="line">the root password from the network.</span><br><span class="line"></span><br><span class="line">Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y</span><br><span class="line">Success.</span><br><span class="line"></span><br><span class="line">By default, MySQL comes with a database named &#x27;test&#x27; that</span><br><span class="line">anyone can access. This is also intended only for testing,</span><br><span class="line">and should be removed before moving into a production</span><br><span class="line">environment.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y</span><br><span class="line"> - Dropping test database...</span><br><span class="line">Success.</span><br><span class="line"></span><br><span class="line"> - Removing privileges on test database...</span><br><span class="line">Success.</span><br><span class="line"></span><br><span class="line">Reloading the privilege tables will ensure that all changes</span><br><span class="line">made so far will take effect immediately.</span><br><span class="line"></span><br><span class="line">Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y</span><br><span class="line">Success.</span><br><span class="line"></span><br><span class="line">All done! </span><br></pre></td></tr></table></figure>
+</div><div class="article-licensing box"><div class="licensing-title"><p>MySQL 教程</p><p><a href="https://blog.hr947x.com/65411b5b7fd1/">https://blog.hr947x.com/65411b5b7fd1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>小徐</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-06-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-06-18</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/MySQL/">MySQL</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/115355ff9fc6/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Linux 教程</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/9706489ee644/"><span class="level-item">ElasticSearch 教程</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#基础操作"><span class="level-left"><span class="level-item">1</span><span class="level-item">基础操作</span></span></a></li><li><a class="level is-mobile" href="#管理"><span class="level-left"><span class="level-item">2</span><span class="level-item">管理</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#用户与权限"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">用户与权限</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#新建用户"><span class="level-left"><span class="level-item">2.1.1</span><span class="level-item">新建用户</span></span></a></li><li><a class="level is-mobile" href="#修改密码加密方式"><span class="level-left"><span class="level-item">2.1.2</span><span class="level-item">修改密码加密方式</span></span></a></li><li><a class="level is-mobile" href="#授权远程访问"><span class="level-left"><span class="level-item">2.1.3</span><span class="level-item">授权远程访问</span></span></a></li></ul></li><li><a class="level is-mobile" href="#备份与恢复"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">备份与恢复</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#备份"><span class="level-left"><span class="level-item">2.2.1</span><span class="level-item">备份</span></span></a></li><li><a class="level is-mobile" href="#恢复"><span class="level-left"><span class="level-item">2.2.2</span><span class="level-item">恢复</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#二进制恢复："><span class="level-left"><span class="level-item">2.2.2.1</span><span class="level-item">二进制恢复：</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#支持-GROUP-BY"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">支持 GROUP BY</span></span></a></li><li><a class="level is-mobile" href="#时区设置"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">时区设置</span></span></a></li><li><a class="level is-mobile" href="#修改本次连接编码"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">修改本次连接编码</span></span></a></li><li><a class="level is-mobile" href="#binlog"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">binlog</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#开启-biglog"><span class="level-left"><span class="level-item">2.6.1</span><span class="level-item">开启 biglog</span></span></a></li><li><a class="level is-mobile" href="#清理-binlog-日志"><span class="level-left"><span class="level-item">2.6.2</span><span class="level-item">清理 binlog 日志</span></span></a></li></ul></li></ul></li><li><a class="level is-mobile" href="#进阶"><span class="level-left"><span class="level-item">3</span><span class="level-item">进阶</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#删除重复记录仅保存一条"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">删除重复记录仅保存一条</span></span></a></li></ul></li><li><a class="level is-mobile" href="#常见问题处理"><span class="level-left"><span class="level-item">4</span><span class="level-item">常见问题处理</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#MySQL-错误：Row-size-too-large-gt-8126"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">MySQL 错误：Row size too large (&gt; 8126).</span></span></a></li></ul></li><li><a class="level is-mobile" href="#rpm-安装-MySQL"><span class="level-left"><span class="level-item">5</span><span class="level-item">rpm 安装 MySQL</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#参考资料"><span class="level-left"><span class="level-item">5.1.1</span><span class="level-item">参考资料</span></span></a></li><li><a class="level is-mobile" href="#1、前期准备"><span class="level-left"><span class="level-item">5.1.2</span><span class="level-item">1、前期准备</span></span></a></li><li><a class="level is-mobile" href="#2、卸载-MySql"><span class="level-left"><span class="level-item">5.1.3</span><span class="level-item">2、卸载 MySql</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#检查-mysql-安装："><span class="level-left"><span class="level-item">5.1.3.1.1</span><span class="level-item">检查 mysql 安装：</span></span></a></li><li><a class="level is-mobile" href="#卸载-mysql："><span class="level-left"><span class="level-item">5.1.3.1.2</span><span class="level-item">卸载 mysql：</span></span></a></li><li><a class="level is-mobile" href="#检查-mariadb-安装"><span class="level-left"><span class="level-item">5.1.3.1.3</span><span class="level-item">检查 mariadb 安装</span></span></a></li><li><a class="level is-mobile" href="#卸载-mariadb"><span class="level-left"><span class="level-item">5.1.3.1.4</span><span class="level-item">卸载 mariadb</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#3、使用-wget-下载-MySQL"><span class="level-left"><span class="level-item">5.1.4</span><span class="level-item">3、使用 wget 下载 MySQL</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#安装-wget"><span class="level-left"><span class="level-item">5.1.4.1.1</span><span class="level-item">安装 wget</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#4、新建目录"><span class="level-left"><span class="level-item">5.1.5</span><span class="level-item">4、新建目录</span></span></a></li><li><a class="level is-mobile" href="#5、下载-MySQL"><span class="level-left"><span class="level-item">5.1.6</span><span class="level-item">5、下载 MySQL</span></span></a></li><li><a class="level is-mobile" href="#6、解压"><span class="level-left"><span class="level-item">5.1.7</span><span class="level-item">6、解压</span></span></a></li><li><a class="level is-mobile" href="#7、安装"><span class="level-left"><span class="level-item">5.1.8</span><span class="level-item">7、安装</span></span></a></li><li><a class="level is-mobile" href="#8、完成安装"><span class="level-left"><span class="level-item">5.1.9</span><span class="level-item">8、完成安装</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#A、获取临时密码"><span class="level-left"><span class="level-item">5.1.9.1.1</span><span class="level-item">A、获取临时密码</span></span></a></li><li><a class="level is-mobile" href="#B、运行向导"><span class="level-left"><span class="level-item">5.1.9.1.2</span><span class="level-item">B、运行向导</span></span></a></li></ul></ul></li><li><a class="level is-mobile" href="#9、启动-mysql-服务"><span class="level-left"><span class="level-item">5.1.10</span><span class="level-item">9、启动 mysql 服务</span></span></a></li><li><a class="level is-mobile" href="#10、登录-mysql"><span class="level-left"><span class="level-item">5.1.11</span><span class="level-item">10、登录 mysql</span></span></a></li><li><a class="level is-mobile" href="#完整安装-mysql-流程"><span class="level-left"><span class="level-item">5.1.12</span><span class="level-item">完整安装 mysql 流程</span></span></a></li></ul></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-20T05:35:04.000Z">2022-04-20</time></p><p class="title"><a href="/4e2ca58138aa/">Linux sed 教程</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-07T13:14:08.000Z">2022-04-07</time></p><p class="title"><a href="/e7a6f47a5edd/">IDEA 快捷键</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T08:38:54.000Z">2022-03-20</time></p><p class="title"><a href="/de4a65c796a3/">Java 基础</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T10:01:25.000Z">2022-03-19</time></p><p class="title"><a href="/906fcab3c166/">Java 新特性</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T05:27:25.000Z">2022-03-19</time></p><p class="title"><a href="/9d30f1f85362/">macOS 环境搭建</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">小徐&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 小徐</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="蜀ICP备20016181号-1" href="https://beian.miit.gov.cn/">蜀ICP备20016181号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

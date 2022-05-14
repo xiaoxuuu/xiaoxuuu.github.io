@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>分布式 - 小徐&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="小徐&#039;s Blog"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="小徐&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="分布式面试题"><meta property="og:type" content="article"><meta property="og:title" content="分布式"><meta property="og:url" content="https://blog.hr947x.com/064a78053560/"><meta property="og:site_name" content="小徐&#039;s Blog"><meta property="og:description" content="分布式面试题"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.hr947x.com/img/og_image.png"><meta property="article:published_time" content="2022-02-15T08:35:00.000Z"><meta property="article:modified_time" content="2022-02-15T08:35:00.000Z"><meta property="article:author" content="小徐"><meta property="article:tag" content="面试"><meta property="article:tag" content="分布式"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.hr947x.com/064a78053560/"},"headline":"分布式","image":["https://blog.hr947x.com/img/og_image.png"],"datePublished":"2022-02-15T08:35:00.000Z","dateModified":"2022-02-15T08:35:00.000Z","author":{"@type":"Person","name":"小徐"},"publisher":{"@type":"Organization","name":"小徐's Blog","logo":{"@type":"ImageObject","url":{"text":"小徐's Blog"}}},"description":"分布式面试题"}</script><link rel="canonical" href="https://blog.hr947x.com/064a78053560/"><link rel="icon" href="/img/avatar.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">小徐&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">博客</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="踽踽独行" href="https://www.hr947x.com">踽踽独行</a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-15T08:35:00.000Z" title="2/15/2022, 8:35:00 AM">2022-02-15</time>发表</span><span class="level-item"><time dateTime="2022-02-15T08:35:00.000Z" title="2/15/2022, 8:35:00 AM">2022-02-15</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span><span class="level-item">42 分钟读完 (大约6257个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">分布式</h1><div class="content"><p>分布式面试题</p>
+<span id="more"></span>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><a href="./index.html">首页</a></p>
+<h1 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h1><h2 id="CAP-理论"><a href="#CAP-理论" class="headerlink" title="CAP 理论"></a>CAP 理论</h2><ul>
+<li>  Consistency (一致性)：即更新操作成功并返回客户端后，所有节点在同一时间的数据完全一致。 对于客户端来说，一致性指的是并发访问时更新过的数据如何获取的问题。 从服务端来看，则是更新如何复制分布到整个系统，以保证数据最终一致；</li>
+<li>  Availability (可用性)：即服务一直可用，而且是正常响应时间。系统能够很好的为用户服务，不出现用户操作失败或者访问超时等用户体验不好的情况；</li>
+<li>  Partition Tolerance (分区容错性)：即分布式系统在遇到某节点或网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务。分区容错性要求能够使应用虽然是一个分布式系统，而看上去却好像是在一个可以运转正常的整体。比如现在的分布式系统中有某一个或者几个机器宕掉了，其他剩下的机器还能够正常运转满足系统需求，对于用户而言并没有什么体验上的影响；</li>
+</ul>
+<p>CP 和 AP：分区容错是必须保证的，当发生网络分区的时候，如果要继续服务，那么强一致性和可用性 只能 2 选 1</p>
+<h2 id="BASE-理论"><a href="#BASE-理论" class="headerlink" title="BASE 理论"></a>BASE 理论</h2><p>BASE 是 Basically Available（基本可用）、Soft state（软状态）和 Eventually consistent（最终一致性） </p>
+<p>BASE 理论是对 CAP 中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结， 是基于 CAP 定理逐步演化而来的。BASE 理论的核心思想是：即使无法做到强一致性，但每个应用都可以 根据自身业务特点，采用适当的方式来使系统达到最终一致性；</p>
+<p>基本可用： </p>
+<ul>
+<li>  响应时间上的损失：正常情况下，处理用户请求需要 0.5s 返回结果，但是由于系统出现故障，处理用户请求的时间变为 3 s。</li>
+<li>  系统功能上的损失：正常情况下，用户可以使用系统的全部功能，但是由于系统访问量突然剧增，系统的部分非核心功能无法使用。</li>
+</ul>
+<p>软状态：数据同步允许一定的延迟</p>
+<p>最终一致性：系统中所有的数据副本，在经过一段时间的同步后，最终能够达到一个一致的状态，不要求实时。</p>
+<h2 id="负责均衡算法、类型"><a href="#负责均衡算法、类型" class="headerlink" title="负责均衡算法、类型"></a>负责均衡算法、类型</h2><ol>
+<li> 轮询法：将请求按顺序轮流地分配到后端服务器上，它均衡地对待后端的每一台服务器，而不关心服务器实际的连接数和当前的系统负载。</li>
+<li> 随机法：通过系统的随机算法，根据后端服务器的列表大小值来随机选取其中的一台服务器进行访问。由概率统计理论可以得知，随着客户端调用服务端的次数增多， 其实际效果越来越接近于平均分配调用量到后端的每一台服务器，也就是轮询的结果。</li>
+<li> 源地址哈希法：源地址哈希的思想是根据获取客户端的 IP 地址，通过哈希函数计算得到的一个数值，用该数值对服务器列表的大小进行取模运算，得到的结果便是客服端要访问服务器的序号。采用源地址哈希法进行负载均衡，同一 IP 地址的客户端，当后端服务器列表不变时，它每次都会映射到同一台后端服务器进行访问。</li>
+<li> 加权轮询法：不同的后端服务器可能机器的配置和当前系统的负载并不相同，因此它们的抗压能力也不相同。给配置高、负载低的机器配置更高的权重，让其处理更多的请；而配置低、负载高的机器，给其分配较低的权重，降低其系统负载，加权轮询能很好地处理这一问题，并将请求顺序且按照权重分配到后端。</li>
+<li> 加权随机法：与加权轮询法一样，加权随机法也根据后端机器的配置，系统的负载分配不同的权重。不同的是，它是按照权重随机请求后端服务器，而非顺序。</li>
+<li> 最小连接数法：最小连接数算法比较灵活和智能，由于后端服务器的配置不尽相同，对于请求的处理有快有慢，它是根据后端服务器当前的连接情况，动态地选取其中当前积压连接数最少的一台服务器来处理当前的请求，尽可能地提高后端服务的利用效率，将负责合理地分流到每一台服务器。</li>
+</ol>
+<h2 id="Session-共享有什么方案"><a href="#Session-共享有什么方案" class="headerlink" title="Session 共享有什么方案"></a>Session 共享有什么方案</h2><ol>
+<li> 采用无状态服务，抛弃 Session</li>
+<li> 存入 cookie（有安全风险）；</li>
+<li> 服务器之间进行 Session 同步，这样可以保证每个服务器上都有全部的 Session 信息，不过当服务器数量比较多的时候，同步是会有延迟甚至同步失败；</li>
+<li> IP 绑定策略 使用 Nginx （或其他复杂均衡软硬件）中的 IP 绑定策略，同一个 IP 只能在指定的同一个机器访问，但是这样做失去了负载均衡的意义，当挂掉一台服务器的时候，会影响一批用户的使用，风险很大；</li>
+<li>使用 Redis 存储 把 Session 放到 Redis 中存储，虽然架构上变得复杂，并且需要多访问一次 Redis ，但是这种方案带来的好处也是很大的： <ul>
+<li>  实现了 Session 共享；</li>
+<li>  可以水平扩展（增加 Redis 服务器）；</li>
+<li>  服务器重启 Session 不丢失（不过也要注意 Session 在 Redis 中的刷新/失效机制）；</li>
+<li>  不仅可以跨服务器 Session 共享，甚至可以跨平台（例如网页端和 APP 端）。</li>
+</ul>
+</li>
+</ol>
+<h2 id="你对-RPC、RMI-的理解"><a href="#你对-RPC、RMI-的理解" class="headerlink" title="你对 RPC、RMI 的理解"></a>你对 RPC、RMI 的理解</h2><p>RPC：在本地调用远程的函数，远程过程调用，可以跨语言实现 httpClient；</p>
+<p>RMI：远程方法调用，Java 中用于实现 RPC 的一种机制，RPC 的 Java 版本，是 J2EE 的网络调用机制，跨 JVM 调用对象的方法，面向对象的思维方式；</p>
+<p>直接或间接实现接口 java.rmi.Remote 成为存在于服务器端的远程对象，供客户端访问并提供一定的服务；</p>
+<p>远程对象必须实现 java.rmi.server.UniCastRemoteObject 类，这样才能保证客户端访问获得远程对象时，该远程对象将会把自身的一个拷贝以 Socket 的形式传输给客户端，此时客户端所获得的这个拷贝称为「存根」，而服务器端本身已存在的远程对象则称之为「骨架」。其实此时的存根是客户端的一个代理，用于与服务器端的通信，而骨架也可认为是服务器端的一个代理，用于接收客户端的请求之后调用远程 方法来响应客户端的请求。</p>
+<h2 id="分布式-id-生成方案"><a href="#分布式-id-生成方案" class="headerlink" title="分布式 id 生成方案"></a>分布式 id 生成方案</h2><ul>
+<li>UUID<ul>
+<li>优点：<ul>
+<li>  代码简单，性能好（本地生成，没有网络消耗）；</li>
+<li>  保证唯一（相对而言，重复概率极低可以忽略）；</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>  每次生成的 ID 都是无序的，而且不是全数字，且无法保证趋势递增；</li>
+<li>  UUID 生成的是字符串，字符串存储性能差，查询效率慢，写的时候由于不能产生顺序的 append 操作，需要进行 insert 操作，导致频繁的页分裂，这种操作在记录占用空间比较大的情况下，性能下降比较大，还会增加读取磁盘次数；</li>
+<li>  UUID 长度过长，不适用于存储，耗费数据库性能；</li>
+<li>  ID 无一定业务含义，可读性差。 有信息安全问题，有可能泄露 mac 地址</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据库自增序列<ul>
+<li>单机<ul>
+<li>优点： <ul>
+<li>  实现简单，依靠数据库即可，成本小；</li>
+<li>  ID 数字化，单调自增，满足数据库存储和查询性能；</li>
+<li>  具有一定的业务可读性。（结合业务 code）</li>
+</ul>
+</li>
+<li>缺点： <ul>
+<li>  强依赖 DB，存在单点问题，如果数据库宕机，则业务不可用；</li>
+<li>  DB 生成 ID 性能有限，单点数据库压力大，无法扛高并发场景；</li>
+<li>  信息安全问题，比如暴露订单量，url查询改一下id查到别人的订单</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据库高可用：多主模式做负载，基于序列的起始值和步长设置，不同的初始值，相同的步长，步长大于节点数<ul>
+<li>优点： <ul>
+<li>  解决了 ID 生成的单点问题，同时平衡了负载；</li>
+</ul>
+</li>
+<li>缺点： <ul>
+<li>  系统扩容困难：系统定义好步长之后，增加机器之后调整步长困难；</li>
+<li>  数据库压力大：每次获取一个ID都必须读写一次数据库；</li>
+<li>  主从同步的时候：电商下单 -&gt; 支付 insert master db select 数据 ，因为数据同步延迟导致查不到这个数据。加 cache(不是最好的解决方式)数据要求比较严谨的话查 master 主库。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Leaf-segment<ul>
+<li>  采用每次获取一个 ID 区间段的方式来解决，区间段用完之后再去数据库获取新的号段，这样一来可以大大减轻数据库的压力核心字段：biz_tag，max_id，step biz_tag 用来区分业务，max_id 表示该 biz_tag 目前所被分配的 ID 号段的最大值，step 表示每次分配的号段长度，原来每次获取 ID 都要访问数据库，现在只需要把 Step 设置的足够合理如 1000，那么现在可以在 1000 个 ID 用完之后再去访问数据库；</li>
+</ul>
+</li>
+<li>  基于 Redis、mongoDB、zk 等中间件生成；</li>
+<li>雪花算法<ul>
+<li>  生成一个 64bit 的整性数字 第一位符号位固定为 0，41 位时间戳，10 位 workId，12 位序列号位数可以有不同实现</li>
+<li>优点： <ul>
+<li>  每个毫秒值包含的 ID 值很多，不够可以变动位数来增加，性能佳（依赖 workId 的实现）。 </li>
+<li>  时间戳值在高位，中间是固定的机器码，自增的序列在低位，整个 ID 是趋势递增的。 </li>
+<li>  能够根据业务场景数据库节点布置灵活挑战 bit 位划分，灵活度高。 </li>
+</ul>
+</li>
+<li>缺点： <ul>
+<li>  强依赖于机器时钟，如果时钟回拨，会导致重复的 ID 生成，所以一般基于此的算法发现时钟回拨， 都会抛异常处理，阻止 ID生成，这可能导致服务不可用。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="分布式锁解决方案"><a href="#分布式锁解决方案" class="headerlink" title="分布式锁解决方案"></a>分布式锁解决方案</h2><p>需要这个锁独立于每一个服务之外，而不是在服务里面。    </p>
+<ul>
+<li>  数据库：利用主键冲突控制一次只有一个线程能获取锁，非阻塞、不可重入、单点、失效时间</li>
+<li>  Zookeeper 分布式锁：zk 通过临时节点，解决了死锁的问题，一旦客户端获取到锁之后突然挂掉（Session 连接断开），那么这个临 时节点就会自动删除掉，其他客户端自动获取锁。临时顺序节点解决惊群效应</li>
+<li>Redis 分布式锁：setNX，单线程处理网络请求，不需要考虑并发安全性 所有服务节点设置相同的 key，返回为 0、则锁获取失败<ul>
+<li>  早期版本没有超时参数，需要单独设置，存在死锁问题（中途宕机）</li>
+<li>  后期版本提供加锁与设置时间原子操作，但是存在任务超时，锁自动释放，导致并发问题，加锁与释放锁不是同一线程问题</li>
+</ul>
+</li>
+</ul>
+<h2 id="？分布式事务解决方案"><a href="#？分布式事务解决方案" class="headerlink" title="？分布式事务解决方案"></a>？分布式事务解决方案</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/bluemiaomiao/p/11216380.html">分布式事务中常见的三种解决方案</a></p>
+<h2 id="如何实现接口幂等性"><a href="#如何实现接口幂等性" class="headerlink" title="如何实现接口幂等性"></a>如何实现接口幂等性</h2><ul>
+<li>  唯一 id。每次操作，都根据操作和内容生成唯一的 id，在执行之前先判断 id 是否存在，如果不存在则执行后续操作，并且保存到数据库或者 Redis 等;</li>
+<li>  服务端提供发送 token 的接口，业务调用接口前先获取 token，然后调用业务接口请求时，把 token 携带过去，服务器判断 token 是否存在 Redis 中，存在表示第一次请求，可以继续执行业务，执行业务完成后，最后需要把 Redis 中的 token 删除；</li>
+<li>  建去重表。将业务中有唯一标识的字段保存到去重表，如果表中存在，则表示已经处理过了；</li>
+<li>  版本控制。增加版本号，当版本号符合时，才能更新数据；</li>
+<li>  状态控制。例如订单有状态已支付、未支付、支付中、支付失败，当处于未支付的时候才允许修改为支付中等；</li>
+</ul>
+<h2 id="zk-与-Eureka-的区别"><a href="#zk-与-Eureka-的区别" class="headerlink" title="zk 与 Eureka 的区别"></a>zk 与 Eureka 的区别</h2><p>zk：CP 设计(强一致性)，目标是一个分布式的协调系统，用于进行资源的统一管理。 当节点 crash 后，需要进行 leader 的选举，在这个期间内，zk 服务是不可用的。 </p>
+<p>eureka：AP 设计（高可用），目标是一个服务注册发现系统，专门用于微服务的服务发现注册。 Eureka 各个节点都是平等的，几个节点挂掉不会影响正常节点的工作，剩余的节点依然可以提供注册和查询服务。而 Eureka 的客户端在向某个 Eureka 注册时如果发现连接失败，会自动切换至其他节点，只 要有一台 Eureka 还在，就能保证注册服务可用（保证可用性），只不过查到的信息可能不是最新的（不保证强一致性） 同时当 Eureka 的服务端发现 85% 以上的服务都没有心跳的话，它就会认为自己的网络出了问题，就不会从服务列表中删除这些失去心跳的服务，同时 Eureka 的客户端也会缓存服务信息。Eureka 对于服务注册发现来说是非常好的选择。</p>
+<h1 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h1><h2 id="Spring-Cloud-与-Dubbo-的区别"><a href="#Spring-Cloud-与-Dubbo-的区别" class="headerlink" title="Spring Cloud 与 Dubbo 的区别"></a>Spring Cloud 与 Dubbo 的区别</h2><ul>
+<li>  底层协议：Spring Cloud 基于 http 协议，Dubbo 基于 TCP 协议，决定了 Dubbo 的性能相对会比较好；</li>
+<li>  注册中心：Spring Cloud 使用的 Eureka ，Dubbo 推荐使用 Zookeeper；</li>
+<li>  模型定义：Dubbo 将一个接口定义为一个服务，Spring Cloud 则是将一个应用定义为一个服务；</li>
+<li>  Spring Cloud是一个生态，而 Dubbo 是 Spring Cloud 生态中关于服务调用一种解决方案（服务治理）</li>
+</ul>
+<h2 id="Spring-Cloud-核心组件及其作用"><a href="#Spring-Cloud-核心组件及其作用" class="headerlink" title="Spring Cloud 核心组件及其作用"></a>Spring Cloud 核心组件及其作用</h2><ul>
+<li>Eureka：服务注册与发现<ul>
+<li>  注册：每个服务都向 Eureka 登记自己提供服务的元数据，包括服务的 ip 地址、端口号、版本号、通信协议等。Eureka 将各个服务维护在了一个服务清单中（双层 Map，第一层 key 是服务名，第二层 key 是实例名，value 是服务地址加端口）。同时对服务维持心跳，剔除不可用的服务，Eureka 集群各节点相互注册每个实例中都有一样的服务清单。</li>
+<li>  发现：Eureka 注册的服务之间调用不需要指定服务地址，而是通过服务名向注册中心咨询，并获取所有服务实例清单(缓存到本地)，然后实现服务的请求访问；</li>
+</ul>
+</li>
+<li>  Ribbon：服务间发起请求的时候，基于 Ribbon 做负载均衡，从⼀个服务的多台机器中选择⼀台（被调用方的服务地址有多个）， Ribbon 也是通过发起 http 请求，来进行的调用，只不过是通过调用服务名的地址来实现的。虽然说 Ribbon 不用去具体请求服务实例的 ip 地址或域名了，但是每调用一个接口都还要 手动去发起 Http 请求；</li>
+<li>  Feign：基于 Feign 的动态代理机制，根据注解和选择的机器，拼接请求 URL 地址，发起请求 ，简化服务间的调用，在 Ribbon 的基础上进行了进一步的封装。单独抽出了一个组件，就是 Spring Cloud Feign。 在引入 Spring Cloud Feign 后，我们只需要创建一个接口并用注解的方式来配置它，即可完成对服务提供方的接口绑定。</li>
+<li>  Hystrix：发起请求是通过 Hystrix 的线程池来⾛的，不同的服务⾛不同的线程池，实现了不同服务调⽤的隔离，通过统计接口超时次数返回默认值，实现服务熔断和降级；</li>
+<li>  Zuul：如果前端、移动端要调⽤后端系统，统⼀从 Zuul ⽹关进⼊，由 Zuul ⽹关转发请求给对应的服务， 通过与 Eureka 进行整合，将自身注册为 Eureka 下的应用，从 Eureka 下获取所有服务的实例，来进行服务的路由。Zuul 还提供了一套过滤器机制，开发者可以自己指定哪些规则的请求需要执行校验逻辑，只 有通过校验逻辑的请求才会被路由到具体服务实例上，否则返回错误提示。</li>
+</ul>
+<p>新架构：</p>
+<ul>
+<li>  服务注册中心 Nacos</li>
+<li>  负载均衡 loadbalancer</li>
+<li>  服务调用 OpenFeign</li>
+<li>  服务网关 Gateway</li>
+<li>  服务降级 Sentienl</li>
+<li>  服务配置 Nacos</li>
+<li>  分布式事务 Seata</li>
+</ul>
+<h1 id="Hystrix"><a href="#Hystrix" class="headerlink" title="Hystrix"></a>Hystrix</h1><h2 id="什么是-Hystrix，简述实现机制"><a href="#什么是-Hystrix，简述实现机制" class="headerlink" title="什么是 Hystrix，简述实现机制"></a>什么是 Hystrix，简述实现机制</h2><p>分布式容错框架</p>
+<ul>
+<li>  阻止故障的连锁反应，实现熔断；</li>
+<li>  快速失败，实现优雅降级；</li>
+<li>  提供实时的监控和告警</li>
+</ul>
+<p>资源隔离：线程隔离，信号量隔离</p>
+<ul>
+<li>  线程隔离：Hystrix 会给每一个 Command 分配一个单独的线程池，这样在进行单个服务调用的时候，就可以在独立的线程池里面进行，而不会对其他线程池造成影响；</li>
+<li>  信号量隔离：客户端需向依赖服务发起请求时，首先要获取一个信号量才能真正发起调用，由于信号量的数量有限，当并发请求量超过信号量个数时，后续的请求都会直接拒绝，进入 fallback 流 程。信号量隔离主要是通过控制并发请求量，防止请求线程大面积阻塞，从而达到限流和防止雪崩的目的。</li>
+</ul>
+<p>熔断和降级：调用服务失败后快速失败</p>
+<ul>
+<li>  熔断是为了防止异常不扩散，保证系统的稳定性；</li>
+<li>  降级：编写好调用失败的补救逻辑，然后对服务直接停止运行，这样这些接口就无法正常调用，但又不至于直接报错，只是服务水平下降；</li>
+</ul>
+<h2 id="断路器的三种状态"><a href="#断路器的三种状态" class="headerlink" title="断路器的三种状态"></a>断路器的三种状态</h2><ul>
+<li>  关 Close：流量正常进入</li>
+<li>  开 Open：拒绝所有流量，调用降级逻辑</li>
+<li>  半开 Half-Open：Open 状态过一段时间（默认 5s）转为此状态来尝试恢复。此状态时：允许有且仅一个请求进入，一旦请求成功就关闭断路器。请求失败就到 Open 状态（这样再过 5 秒才能转到半开状态）</li>
+</ul>
+<h1 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h1><p><a target="_blank" rel="noopener" href="https://processon.com/view/6049e6da5653bb4f089a1f59#map">Eureka 结构</a></p>
+<h2 id="Eureka-的二级缓存"><a href="#Eureka-的二级缓存" class="headerlink" title="Eureka 的二级缓存"></a>Eureka 的二级缓存</h2><p>Eureka Server 的数据存储分了两层：数据存储层和缓存层。数据存储层记录注册到 Eureka Server 上的服务信息，缓存层是经过包装后的数据，可以直接在 Eureka Client 调用时返回。我们先来看看数据存储层的数据结构。</p>
+<p>Eureka Server 的数据存储层是双层的 ConcurrentHashMap，我们知道 ConcurrentHashMap 是线程安全高效的 Map 集合。</p>
+<p>第一层的 ConcurrentHashMap 的 <code>key=spring.application.name</code> 也就是客户端实例注册的应用名；value 为嵌套的 ConcurrentHashMap。</p>
+<p>第二层嵌套的 ConcurrentHashMap 的 <code>key=instanceId</code> 也就是服务的唯一实例 ID，value 为 Lease 对象，Lease 对象存储着这个实例的所有注册信息，包括 ip 、端口、属性等。</p>
+<p>根据这个存储结构我们可以发现，Eureka Server 第一层都是存储着所有的服务名，以及服务名对应的实例信息，也就是说第一层都是按照服务应用名这个维度来切分存储：</p>
+<h2 id="Eureka-Server-缓存机制"><a href="#Eureka-Server-缓存机制" class="headerlink" title="Eureka Server 缓存机制"></a>Eureka Server 缓存机制</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/yixinjishu/p/10871243.html">程序员笔记|详解Eureka 缓存机制 - 宜信技术 - 博客园 (cnblogs.com)</a></p>
+<p>Eureka Server 为了提供响应效率，提供了两层的缓存结构，将 Eureka Client 所需要的注册信息，直接存储在缓存结构中。</p>
+<ul>
+<li>第一层缓存：readOnlyCacheMap，本质上是 ConcurrentHashMap，依赖定时从 readWriteCacheMap 同步数据，默认时间为 30 秒。<ul>
+<li>  readOnlyCacheMap ： 是一个 CurrentHashMap 只读缓存，这个主要是为了供客户端获取注册信息时使用，其缓存更新，依赖于定时器的更新，通过和 readWriteCacheMap 的值做对比，如果数据不一致，则以 readWriteCacheMap 的数据为准。</li>
+</ul>
+</li>
+<li>第二层缓存：readWriteCacheMap，本质上是 Guava 缓存。<ul>
+<li>  readWriteCacheMap：readWriteCacheMap 的数据主要同步于存储层。当获取缓存时判断缓存中是否没有数据，如果不存在此数据，则通过 CacheLoader 的 load 方法去加载，加载成功之后将数据放入缓存，同时返回数据。</li>
+<li>  readWriteCacheMap 缓存过期时间，默认为 180 秒，当服务下线、过期、注册、状态变更，都会来清除此缓存中的数据。</li>
+</ul>
+</li>
+</ul>
+<p>Eureka Client 获取全量或者增量的数据时，会先从一级缓存中获取；如果一级缓存中不存在，再从二级缓存中获取；如果二级缓存也不存在，这时候先将存储层的数据同步到缓存中，再从缓存中获取。</p>
+<p>通过 Eureka Server 的二层缓存机制，可以非常有效地提升 Eureka Server 的响应时间，通过数据存储层和缓存层的数据切割，根据使用场景来提供不同的数据支持。</p>
+<h2 id="Eureka-集群配置"><a href="#Eureka-集群配置" class="headerlink" title="Eureka 集群配置"></a>Eureka 集群配置</h2><p>在两个 Eureka 的配置文件中均配置上另一 Eureka 地址即可：</p>
+<p><code>eureka.client.service-url.defaultZone: http://server2:20002/eureka</code></p>
+<h1 id="Feign"><a href="#Feign" class="headerlink" title="Feign"></a>Feign</h1><h2 id="Feign-的实现原理"><a href="#Feign-的实现原理" class="headerlink" title="Feign 的实现原理"></a>Feign 的实现原理</h2><ul>
+<li>  首先通过 @EnableFeignCleints 注解开启 FeignCleint</li>
+<li>  根据 Feign 的规则实现接口，并加 @FeignCleint 注解</li>
+<li>  程序启动后，会进行包扫描，扫描所有的 @FeignCleint 的注解的类，并将这些信息注入到 IoC 容器中。</li>
+<li>  当接口的方法被调用，通过 JDK 的代理，来生成具体的 RequesTemplate</li>
+<li>  RequesTemplate 再生成 Request</li>
+<li>  Request 交给 Client 去处理，其中 Client 可以是 HttpUrlConnection、HttpClient 也可以是 Okhttp</li>
+<li>  最后 Client 被封装到 LoadBalanceClient 类，这个类结合类 Ribbon 做到了负载均衡。</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>分布式</p><p><a href="https://blog.hr947x.com/064a78053560/">https://blog.hr947x.com/064a78053560/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>小徐</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-02-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-02-15</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/1f2c05056136/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">日常问题处理</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/a4e42390dafc/"><span class="level-item">Redis</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#前言"><span class="level-left"><span class="level-item">1</span><span class="level-item">前言</span></span></a></li><li><a class="level is-mobile" href="#分布式"><span class="level-left"><span class="level-item">2</span><span class="level-item">分布式</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#CAP-理论"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">CAP 理论</span></span></a></li><li><a class="level is-mobile" href="#BASE-理论"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">BASE 理论</span></span></a></li><li><a class="level is-mobile" href="#负责均衡算法、类型"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">负责均衡算法、类型</span></span></a></li><li><a class="level is-mobile" href="#Session-共享有什么方案"><span class="level-left"><span class="level-item">2.4</span><span class="level-item">Session 共享有什么方案</span></span></a></li><li><a class="level is-mobile" href="#你对-RPC、RMI-的理解"><span class="level-left"><span class="level-item">2.5</span><span class="level-item">你对 RPC、RMI 的理解</span></span></a></li><li><a class="level is-mobile" href="#分布式-id-生成方案"><span class="level-left"><span class="level-item">2.6</span><span class="level-item">分布式 id 生成方案</span></span></a></li><li><a class="level is-mobile" href="#分布式锁解决方案"><span class="level-left"><span class="level-item">2.7</span><span class="level-item">分布式锁解决方案</span></span></a></li><li><a class="level is-mobile" href="#？分布式事务解决方案"><span class="level-left"><span class="level-item">2.8</span><span class="level-item">？分布式事务解决方案</span></span></a></li><li><a class="level is-mobile" href="#如何实现接口幂等性"><span class="level-left"><span class="level-item">2.9</span><span class="level-item">如何实现接口幂等性</span></span></a></li><li><a class="level is-mobile" href="#zk-与-Eureka-的区别"><span class="level-left"><span class="level-item">2.10</span><span class="level-item">zk 与 Eureka 的区别</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Spring-Cloud"><span class="level-left"><span class="level-item">3</span><span class="level-item">Spring Cloud</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Spring-Cloud-与-Dubbo-的区别"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">Spring Cloud 与 Dubbo 的区别</span></span></a></li><li><a class="level is-mobile" href="#Spring-Cloud-核心组件及其作用"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">Spring Cloud 核心组件及其作用</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Hystrix"><span class="level-left"><span class="level-item">4</span><span class="level-item">Hystrix</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#什么是-Hystrix，简述实现机制"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">什么是 Hystrix，简述实现机制</span></span></a></li><li><a class="level is-mobile" href="#断路器的三种状态"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">断路器的三种状态</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Eureka"><span class="level-left"><span class="level-item">5</span><span class="level-item">Eureka</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Eureka-的二级缓存"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">Eureka 的二级缓存</span></span></a></li><li><a class="level is-mobile" href="#Eureka-Server-缓存机制"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">Eureka Server 缓存机制</span></span></a></li><li><a class="level is-mobile" href="#Eureka-集群配置"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">Eureka 集群配置</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Feign"><span class="level-left"><span class="level-item">6</span><span class="level-item">Feign</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Feign-的实现原理"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">Feign 的实现原理</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-20T05:35:04.000Z">2022-04-20</time></p><p class="title"><a href="/4e2ca58138aa/">Linux sed 教程</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-07T13:14:08.000Z">2022-04-07</time></p><p class="title"><a href="/e7a6f47a5edd/">IDEA 快捷键</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T08:38:54.000Z">2022-03-20</time></p><p class="title"><a href="/de4a65c796a3/">Java 基础</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T10:01:25.000Z">2022-03-19</time></p><p class="title"><a href="/906fcab3c166/">Java 新特性</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T05:27:25.000Z">2022-03-19</time></p><p class="title"><a href="/9d30f1f85362/">macOS 环境搭建</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">小徐&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 小徐</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="蜀ICP备20016181号-1" href="https://beian.miit.gov.cn/">蜀ICP备20016181号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

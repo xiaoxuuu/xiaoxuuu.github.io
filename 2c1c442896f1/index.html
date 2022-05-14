@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>如何提高代码的可读性 - 小徐&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#3273dc"><meta name="application-name" content="小徐&#039;s Blog"><meta name="msapplication-TileImage" content="icons/touch-icon-iphone.png"><meta name="msapplication-TileColor" content="#3273dc"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="小徐&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><link rel="apple-touch-icon" sizes="144x144" href="icons/touch-icon-iphone.png"><link rel="apple-touch-icon" sizes="152x152" href="icons/touch-icon-ipad.png"><link rel="apple-touch-icon" sizes="72x72" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="96x96" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="128x128" href="icon/logo.ico"><link rel="apple-touch-icon" sizes="256x256" href="icon/logo.ico"><meta name="description" content="如何提高代码的可读性"><meta property="og:type" content="article"><meta property="og:title" content="如何提高代码的可读性"><meta property="og:url" content="https://blog.hr947x.com/2c1c442896f1/"><meta property="og:site_name" content="小徐&#039;s Blog"><meta property="og:description" content="如何提高代码的可读性"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://blog.hr947x.com/img/og_image.png"><meta property="article:published_time" content="2021-11-17T13:24:23.000Z"><meta property="article:modified_time" content="2021-11-17T13:24:23.000Z"><meta property="article:author" content="小徐"><meta property="article:tag" content="其他"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.hr947x.com/2c1c442896f1/"},"headline":"如何提高代码的可读性","image":["https://blog.hr947x.com/img/og_image.png"],"datePublished":"2021-11-17T13:24:23.000Z","dateModified":"2021-11-17T13:24:23.000Z","author":{"@type":"Person","name":"小徐"},"publisher":{"@type":"Organization","name":"小徐's Blog","logo":{"@type":"ImageObject","url":{"text":"小徐's Blog"}}},"description":"如何提高代码的可读性"}</script><link rel="canonical" href="https://blog.hr947x.com/2c1c442896f1/"><link rel="icon" href="/img/avatar.jpg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">小徐&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">博客</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="踽踽独行" href="https://www.hr947x.com">踽踽独行</a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-11-17T13:24:23.000Z" title="11/17/2021, 1:24:23 PM">2021-11-17</time>发表</span><span class="level-item"><time dateTime="2021-11-17T13:24:23.000Z" title="11/17/2021, 1:24:23 PM">2021-11-17</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span> / </span><a class="link-muted" href="/categories/%E6%8A%80%E6%9C%AF/%E6%95%99%E7%A8%8B/">教程</a></span><span class="level-item">8 分钟读完 (大约1182个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">如何提高代码的可读性</h1><div class="content"><p>如何提高代码的可读性</p>
+<span id="more"></span>
+
+<h1 id="一、注释"><a href="#一、注释" class="headerlink" title="一、注释"></a>一、注释</h1><p>首先，我们先谈一下注释。</p>
+<p>什么是注释？注释就是说明解释性的文字 。</p>
+<p>而代码注释是架起程序设计者与程序阅读者之间的通信桥梁，可以最大限度的提高团队开发合作效率。也是程序代码可维护性的重要环节之一。</p>
+<p>那么，怎么写注释比较好呢？有以下几点需要大家注意：</p>
+<h3 id="1、注释形式统一"><a href="#1、注释形式统一" class="headerlink" title="1、注释形式统一"></a>1、注释形式统一</h3><p>在整个应用程序中，使用具有一致的标点和结构的样式来构造注释。如果在其它项目中发现它们的注释规范与这份文档不同，按照这份规范写代码，不要试图在既成的规范系统中引入新的规范。</p>
+<h3 id="2、注释内容准确简洁"><a href="#2、注释内容准确简洁" class="headerlink" title="2、注释内容准确简洁"></a>2、注释内容准确简洁</h3><p>内容要简单、明了、含义准确，防止注释的多义性，错误的注释不但无益反而有害。</p>
+<p>当内容很显而易见的时候，进行重复的注释是很没有效率的。</p>
+<p>如果你必须对该代码进行注释，那你可以简单地将其合并到一行中。</p>
+<p>简单的代码做简单注释，注释内容不用写的太多。</p>
+<p>注释条件：</p>
+<h4 id="A、基本注释（必须加）"><a href="#A、基本注释（必须加）" class="headerlink" title="A、基本注释（必须加）"></a>A、基本注释（必须加）</h4><p>a) 类（接口）的注释。<br>b) 构造函数的注释。<br>c) 方法的注释。<br>d) 全局变量的注释。<br>e) 字段/属性的注释。</p>
+<h4 id="B、特殊必加注释（必须加）"><a href="#B、特殊必加注释（必须加）" class="headerlink" title="B、特殊必加注释（必须加）"></a>B、特殊必加注释（必须加）</h4><p>a) 典型算法必须有注释。<br>b) 在代码不明晰处必须有注释。<br>c) 在代码修改处加上修改标识的注释。<br>d) 在循环和逻辑分支组成的代码中加注释。<br>e) 为他人提供的接口必须加详细注释。</p>
+<p>关键性的语句需要加注释，例如特定的变量含义解释，特别的条件或者函数意思解释。</p>
+<p>特定的变量含义解释，特别的条件或者函数意思解释没有统一的标准，自己来恒定，不同阶段所理解的关键性都有区别。</p>
+<h2 id="二、一致的缩进"><a href="#二、一致的缩进" class="headerlink" title="二、一致的缩进"></a>二、一致的缩进</h2><p>常用的 IDE 都有代码格式化。大家写完程序，删去无用空行，<code>Ctrl + Alt + L</code>调整一下就可以了。</p>
+<p>那么在这里需要注意的是使用 Tab 缩进就不能使用空格缩进，风格要统一，千万不可以混用。这一点很重要，千万不可以混用！</p>
+<h2 id="三、代码分组"><a href="#三、代码分组" class="headerlink" title="三、代码分组"></a>三、代码分组</h2><p>通常情况下，某些任务需要几行代码，那么使用空行将这些代码分隔开是一个不错的主意。</p>
+<p>这会让它们之间有一些空间。</p>
+<p>然后再在每个代码块的开头添加注释，视觉上看起来就是分离的代码块了。 </p>
+<p>比如说：new 了几个对象，然后要使用这些对象的方法，那么，在这之间，我们可以来上一个空行。    </p>
+<h2 id="四、一致的命名方案"><a href="#四、一致的命名方案" class="headerlink" title="四、一致的命名方案"></a>四、一致的命名方案</h2><p>这个上次提到过，那么这次再和大家分享一下。</p>
+<p>首先，命名应该有单词边界。我们现在最常用的就是驼峰法。</p>
+<blockquote>
+<p>camelCase(骆驼命名法)：除了第一个单词，每个单词的第一个字母都大写。 </p>
+</blockquote>
+<p>命名方法很多，类似于前面提到的缩进方式，命名方法也有不同的选择。一些语言倾向于使用一种命名方案。例如，在 Java 中，大多数代码都使用 camelCase 方式来命名。</p>
+<h2 id="五、避免嵌套太深"><a href="#五、避免嵌套太深" class="headerlink" title="五、避免嵌套太深"></a>五、避免嵌套太深</h2><p>嵌套过多会使代码更难读取和跟踪。</p>
+<p>这个没有办法具体的讲，只能说，平时写代码的时候多注意。</p>
+<p>尽可能减少的 if for 循环嵌套层数与尽量少使用递归。</p>
+<h2 id="六、限制行的长度"><a href="#六、限制行的长度" class="headerlink" title="六、限制行的长度"></a>六、限制行的长度</h2><p>眼睛在阅读高而窄的文本时会更舒服，这正是报纸文章总是二三十字为一行的原因。</p>
+<p>我们在编写代码时，尽量不要将一行代码写出屏幕外。</p>
+<p>虽然这种情况比较少，但是我们还是需要时刻注意。</p>
+<h2 id="七、文件和文件夹结构"><a href="#七、文件和文件夹结构" class="headerlink" title="七、文件和文件夹结构"></a>七、文件和文件夹结构</h2><p>没有什么最佳的代码格式，只有统一得代码格式。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>如何提高代码的可读性</p><p><a href="https://blog.hr947x.com/2c1c442896f1/">https://blog.hr947x.com/2c1c442896f1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>小徐</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-11-17</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-11-17</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%85%B6%E4%BB%96/">其他</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/3a9b80b3a95d/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">待归档</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/4204d2c4a428/"><span class="level-item">高项每日</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#一、注释"><span class="level-left"><span class="level-item">1</span><span class="level-item">一、注释</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#1、注释形式统一"><span class="level-left"><span class="level-item">1.1.1</span><span class="level-item">1、注释形式统一</span></span></a></li><li><a class="level is-mobile" href="#2、注释内容准确简洁"><span class="level-left"><span class="level-item">1.1.2</span><span class="level-item">2、注释内容准确简洁</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#A、基本注释（必须加）"><span class="level-left"><span class="level-item">1.1.2.1</span><span class="level-item">A、基本注释（必须加）</span></span></a></li><li><a class="level is-mobile" href="#B、特殊必加注释（必须加）"><span class="level-left"><span class="level-item">1.1.2.2</span><span class="level-item">B、特殊必加注释（必须加）</span></span></a></li></ul></li></ul><li><a class="level is-mobile" href="#二、一致的缩进"><span class="level-left"><span class="level-item">1.2</span><span class="level-item">二、一致的缩进</span></span></a></li><li><a class="level is-mobile" href="#三、代码分组"><span class="level-left"><span class="level-item">1.3</span><span class="level-item">三、代码分组</span></span></a></li><li><a class="level is-mobile" href="#四、一致的命名方案"><span class="level-left"><span class="level-item">1.4</span><span class="level-item">四、一致的命名方案</span></span></a></li><li><a class="level is-mobile" href="#五、避免嵌套太深"><span class="level-left"><span class="level-item">1.5</span><span class="level-item">五、避免嵌套太深</span></span></a></li><li><a class="level is-mobile" href="#六、限制行的长度"><span class="level-left"><span class="level-item">1.6</span><span class="level-item">六、限制行的长度</span></span></a></li><li><a class="level is-mobile" href="#七、文件和文件夹结构"><span class="level-left"><span class="level-item">1.7</span><span class="level-item">七、文件和文件夹结构</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-20T05:35:04.000Z">2022-04-20</time></p><p class="title"><a href="/4e2ca58138aa/">Linux sed 教程</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-07T13:14:08.000Z">2022-04-07</time></p><p class="title"><a href="/e7a6f47a5edd/">IDEA 快捷键</a></p><p class="categories"><a href="/categories/%E6%95%99%E7%A8%8B/">教程</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-20T08:38:54.000Z">2022-03-20</time></p><p class="title"><a href="/de4a65c796a3/">Java 基础</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T10:01:25.000Z">2022-03-19</time></p><p class="title"><a href="/906fcab3c166/">Java 新特性</a></p><p class="categories"><a href="/categories/%E9%9D%A2%E8%AF%95/">面试</a> / <a href="/categories/%E9%9D%A2%E8%AF%95/Java%E5%9F%BA%E7%A1%80/">Java基础</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-19T05:27:25.000Z">2022-03-19</time></p><p class="title"><a href="/9d30f1f85362/">macOS 环境搭建</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">小徐&#039;s Blog</a><p class="is-size-7"><span>&copy; 2022 小徐</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent " target="_blank" rel="noopener" title="蜀ICP备20016181号-1" href="https://beian.miit.gov.cn/">蜀ICP备20016181号-1</a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
